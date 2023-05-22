@@ -27,4 +27,9 @@ public class AuthorServiceImpl implements AuthorService {
         }
         return null;
     }
+
+    @Override
+    public Author addArticle(Author article) {
+        return null;
+    }
 }
