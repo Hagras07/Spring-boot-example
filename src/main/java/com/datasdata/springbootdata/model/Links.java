@@ -6,15 +6,14 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table
 public class Links {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer linkId;
     private String rel;
     private String href;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "id",nullable = false)
     private Article article;
 }

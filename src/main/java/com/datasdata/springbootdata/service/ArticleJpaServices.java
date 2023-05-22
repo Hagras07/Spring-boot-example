@@ -6,7 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
+
 @Service
 @Primary
 public class ArticleJpaServices implements ArticleService{
@@ -24,12 +27,14 @@ public class ArticleJpaServices implements ArticleService{
 
     @Override
     public Article getArticleById(Integer id) {
-        return  articleRepo.findByArticleId(id);
+        Optional<Article> byId = articleRepo.findById(id);
+        Iterator<Article> iterator = byId.stream().iterator();
+        return  iterator.next();
     }
 
     @Override
     public List<Article> getArticlesByAuthorName(String authorName) {
-        return articleRepo.findByArticleAuthorName(authorName);
+        return articleRepo.findByName(authorName);
     }
 
     @Override
@@ -45,7 +50,7 @@ public class ArticleJpaServices implements ArticleService{
 
     @Override
     public Article updateArticle(Integer id, Article article) {
-        if (id != null && articleRepo.existsArticleWithId(id)){
+        if (id != null ){
             articleRepo.deleteById(id);
         }
         return articleRepo.save(article);
