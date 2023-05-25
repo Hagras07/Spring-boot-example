@@ -1,6 +1,6 @@
-package com.datasdata.springbootdata.repo;
+package com.vodafone.springboot.repo;
 
-import com.datasdata.springbootdata.model.Article;
+import com.vodafone.springboot.model.Article;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

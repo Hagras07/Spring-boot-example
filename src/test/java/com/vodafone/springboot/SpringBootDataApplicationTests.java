@@ -1,4 +1,4 @@
-package com.datasdata.springbootdata;
+package com.vodafone.springboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

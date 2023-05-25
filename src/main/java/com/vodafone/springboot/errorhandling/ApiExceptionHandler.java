@@ -1,6 +1,6 @@
-package com.datasdata.springbootdata.errorhandlling;
+package com.vodafone.springboot.errorhandling;
 
-import com.datasdata.springbootdata.model.ErrorDetails;
+import com.vodafone.springboot.model.ErrorDetails;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

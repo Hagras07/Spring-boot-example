@@ -1,4 +1,4 @@
-package com.datasdata.springbootdata.model;
+package com.vodafone.springboot.model;
 
 import lombok.Data;
 

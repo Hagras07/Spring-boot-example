@@ -1,8 +1,7 @@
-package com.datasdata.springbootdata.service;
+package com.vodafone.springboot.service;
 
-import com.datasdata.springbootdata.model.Author;
-import com.datasdata.springbootdata.repo.AuthorRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.vodafone.springboot.model.Author;
+import com.vodafone.springboot.repo.AuthorRepo;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +9,10 @@ import java.util.Optional;
 
 @Service
 @Primary
-public class AuthorJpaServices implements AuthorService  {
-
-    @Autowired
+public class AuthorServiceJpa implements AuthorService  {
    private final AuthorRepo authorRepo;
 
-    public AuthorJpaServices(AuthorRepo authorRepo) {
+    public AuthorServiceJpa(AuthorRepo authorRepo) {
         this.authorRepo = authorRepo;
     }
 

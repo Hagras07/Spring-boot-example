@@ -1,17 +1,17 @@
-package com.datasdata.springbootdata.service;
+package com.vodafone.springboot.service;
 
-import com.datasdata.springbootdata.contoller.ArticlesController;
-import com.datasdata.springbootdata.contoller.AuthorController;
-import com.datasdata.springbootdata.model.Article;
-import com.datasdata.springbootdata.model.Links;
-import com.datasdata.springbootdata.repo.ArticleRepo;
+import com.vodafone.springboot.controller.ArticlesController;
+import com.vodafone.springboot.controller.AuthorController;
+import com.vodafone.springboot.model.Article;
+import com.vodafone.springboot.model.Links;
+import com.vodafone.springboot.repo.ArticleRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
 import org.springframework.hateoas.Link;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,13 +20,13 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Service
 @Primary
-public class ArticleJpaServices implements ArticleService{
+public class ArticleServiceJpa implements ArticleService{
     @Autowired
-    private final ArticleRepo articleRepo;
+    private ArticleRepo articleRepo;
 
-    public ArticleJpaServices(ArticleRepo articleRepo) {
-        this.articleRepo = articleRepo;
-    }
+//    public ArticleServiceJpa(ArticleRepo articleRepo) {
+//        this.articleRepo = articleRepo;
+//    }
 
     @Override
     public List<Article> getAllArticles() {
@@ -80,14 +80,14 @@ public class ArticleJpaServices implements ArticleService{
         List<Links> links = new ArrayList<>();
         Links self = new Links();
 
-        Link selfLink = linkTo(methodOn(ArticlesController.class)
+        Link selfLink = WebMvcLinkBuilder.linkTo(methodOn(ArticlesController.class)
                 .getArticle(article.getId())).withRel("self");
 
         self.setRel("self");
         self.setHref(selfLink.getHref());
 
         Links authorLink = new Links();
-        Link authLink = linkTo(methodOn(AuthorController.class)
+        Link authLink = WebMvcLinkBuilder.linkTo(methodOn(AuthorController.class)
                 .getAuthorById(article.getAuthorId())).withRel("author");
         authorLink.setRel("author");
         authorLink.setHref(authLink.getHref());

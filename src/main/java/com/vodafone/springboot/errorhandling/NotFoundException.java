@@ -1,4 +1,4 @@
-package com.datasdata.springbootdata.errorhandlling;
+package com.vodafone.springboot.errorhandling;
 
 import org.springframework.http.HttpStatus;
 

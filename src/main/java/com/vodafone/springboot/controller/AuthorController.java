@@ -1,8 +1,7 @@
-package com.datasdata.springbootdata.contoller;
+package com.vodafone.springboot.controller;
 
-import com.datasdata.springbootdata.model.Article;
-import com.datasdata.springbootdata.model.Author;
-import com.datasdata.springbootdata.service.AuthorService;
+import com.vodafone.springboot.model.Author;
+import com.vodafone.springboot.service.AuthorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

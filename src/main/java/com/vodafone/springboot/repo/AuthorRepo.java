@@ -1,11 +1,8 @@
-package com.datasdata.springbootdata.repo;
+package com.vodafone.springboot.repo;
 
-import com.datasdata.springbootdata.model.Article;
-import com.datasdata.springbootdata.model.Author;
+import com.vodafone.springboot.model.Author;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface AuthorRepo extends JpaRepository<Author,Integer> {

@@ -1,7 +1,7 @@
-package com.datasdata.springbootdata.service;
+package com.vodafone.springboot.service;
 
 
-import com.datasdata.springbootdata.model.Article;
+import com.vodafone.springboot.model.Article;
 
 import java.util.List;
 

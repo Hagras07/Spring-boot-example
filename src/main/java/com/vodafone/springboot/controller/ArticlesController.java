@@ -1,7 +1,7 @@
-package com.datasdata.springbootdata.contoller;
+package com.vodafone.springboot.controller;
 
-import com.datasdata.springbootdata.model.Article;
-import com.datasdata.springbootdata.service.ArticleService;
+import com.vodafone.springboot.model.Article;
+import com.vodafone.springboot.service.ArticleService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,13 +10,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/v2")
-public class ArticlesControllerV2 {
+@RequestMapping(value = "/v1")
+public class ArticlesController {
 
     private final ArticleService articleService;
 
 
-    public ArticlesControllerV2(ArticleService articleService) {
+    public ArticlesController(ArticleService articleService) {
         this.articleService = articleService;
     }
 

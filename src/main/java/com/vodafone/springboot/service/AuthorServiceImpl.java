@@ -1,6 +1,6 @@
-package com.datasdata.springbootdata.service;
+package com.vodafone.springboot.service;
 
-import com.datasdata.springbootdata.model.Author;
+import com.vodafone.springboot.model.Author;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
